@@ -1,0 +1,45 @@
+{
+  "name": "@dietdev/metrika",
+  "version": "0.1.0",
+  "description": "Клиент Яндекс.Метрики: очередь до создания счётчика, пакетная отправка параметров",
+  "keywords": [
+    "yandex",
+    "metrika",
+    "analytics",
+    "typescript"
+  ],
+  "author": "dietdev <dietdev.tech@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/*.test.ts\"",
+    "test:watch": "node --disable-warning=ExperimentalWarning --test --watch \"test/*.test.ts\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "prettier": "^3.9.6",
+    "typescript": "^5.9.3"
+  }
+}
