@@ -10,6 +10,14 @@
   ],
   "author": "dietdev <dietdev.tech@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diet-dev/metrika.git"
+  },
+  "homepage": "https://github.com/diet-dev/metrika#readme",
+  "bugs": {
+    "url": "https://github.com/diet-dev/metrika/issues"
+  },
   "type": "module",
   "exports": {
     ".": {
